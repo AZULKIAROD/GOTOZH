@@ -1,0 +1,42 @@
+{pag}
+Developer Profile
+
+{style}
+body { background: #0a0e17; font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; height: 80vh; }
+.profile-box { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; text-align: center; width: 280px; color: #c9d1d9; }
+.avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #58a6ff; object-fit: cover; }
+.username { color: white; margin: 16px 0 4px 0; font-size: 22px; }
+.bio { font-size: 14px; color: #8b949e; margin-bottom: 20px; }
+.btn-follow { background: #21262d; border: 1px solid #30363d; color: #58a6ff; padding: 8px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; }
+.following { background: #58a6ff; color: #0d1117; }
+
+{text}
+<div class="profile-box">
+
+{img}
+src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200" alt="User Avatar" class="avatar"
+
+{text}
+<h2 class="username">Sarah Jenkins</h2><p class="bio">Systems Engineer & Language Designer</p>
+
+{button}
+id="follow-btn" class="btn-follow"
+Follow
+
+{text}
+</div>
+
+{script}
+const followBtn = document.getElementById('follow-btn');
+let isFollowing = false;
+
+followBtn.addEventListener('click', () => {
+    isFollowing = !isFollowing;
+    if(isFollowing) {
+        followBtn.innerText = 'Following';
+        followBtn.classList.add('following');
+    } else {
+        followBtn.innerText = 'Follow';
+        followBtn.classList.remove('following');
+    }
+});
